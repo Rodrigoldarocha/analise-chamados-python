@@ -1,38 +1,27 @@
-📊✨ Análise STD - Processamento de Dados
+# 📊✨ Análise STD - Processamento de Dados
 
-📝 Script para tratamento e unificação de bases de chamados, tornando seus dados mais organizados e fáceis de analisar!
+📝 **Script para tratamento, limpeza e unificação de bases de dados de chamados, facilitando a análise e acompanhamento de metas.**
 
-🚀 Funcionalidades
+---
 
-📂 Processamento de planilhas Excel – leia e manipule seus arquivos com facilidade
+## 🚀 Funcionalidades
+- 📂 **Processamento de planilhas Excel** – leitura e manipulação de arquivos `.xlsx`  
+- 🔗 **Unificação de bases de dados** – combina várias planilhas em uma tabela consolidada  
+- 🧹 **Limpeza e formatação de dados** – padroniza datas, remove duplicidades e corrige inconsistências  
+- ✅ **Cálculo de status de chamados** – identifica se cada chamado está **No Prazo (NP)** ou **Atrasado (A)**  
+- 📊 **Resumo de desempenho** – gera informações consolidadas para acompanhamento de metas  
 
-🔗 Unificação de bases de dados – junte várias planilhas em uma só
+---
 
-🧹 Limpeza e formatação de dados – deixe tudo padronizado e pronto para análise
+## 🛠️ Tecnologias Utilizadas
+- **Python** 🐍 – linguagem principal do script  
+- **Pandas** 📊 – manipulação e análise de dados  
+- **OpenPyXL** 📁 – leitura e escrita de arquivos Excel  
+- **Emojis e símbolos** ✨ – visualização intuitiva de status  
 
-⚙️ Como usar
+---
 
-💻 Instale as dependências:
-
+## ⚙️ Como usar
+1. 💻 Instale as dependências:
+```bash
 pip install pandas openpyxl
-
-
-🏃 Execute o script:
-
-python TRATAR_ANALISES_UNIFICADO.py
-
-🗂️ O que o script faz com os dados
-
-🗓️ Ajusta datas de criação, chegada, previsão e conclusão
-
-✅ Calcula se os chamados estão No Prazo (NP) ou Atrasados (A)
-
-📝 Unifica todas as planilhas em uma tabela única e organizada
-
-🔍 Facilita análise de desempenho e acompanhamento de metas
-
-💡 Dicas
-
-Salve suas planilhas em formato .xlsx
-
-Depois de rodar o script, abra a planilha final para conferir os resultados 📊
