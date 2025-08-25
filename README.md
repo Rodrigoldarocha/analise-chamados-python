@@ -1,31 +1,70 @@
-# 📊✨ Análise STD - Processamento de Dados
+📊✨ Análise STD - Processamento de Dados
 
-📝 **Script para tratamento, limpeza e unificação de bases de dados de chamados, facilitando a análise e acompanhamento de metas.**
+📝 Script completo para tratamento, análise e geração de métricas de desempenho de chamados, replicando todas as medidas DAX do Power BI em Python.
 
----
+🚀 Funcionalidades Principais
+📂 Processamento de Dados
+Carregamento Inteligente: Importa automaticamente dados de arquivos Excel com tratamento robusto de erros
 
-## 🚀 Funcionalidades
-- 📂 **Processamento de planilhas Excel** – leitura e manipulação de arquivos `.xlsx`  
-- 🔗 **Unificação de bases de dados** – combina várias planilhas em uma tabela consolidada  
-- 🧹 **Limpeza e formatação de dados** – padroniza datas, remove duplicidades e corrige inconsistências  
-- ✅ **Cálculo de status de chamados** – identifica se cada chamado está **No Prazo (NP)** ou **Atrasado (A)**  
-- 📊 **Resumo de desempenho** – gera informações consolidadas para acompanhamento de metas  
+Mapeamento Automático: Associa UFs às Divisões e Gerências Operacionais correspondentes
 
----
+Conversão de Datas: Padroniza todas as colunas de data para formato datetime
 
-## 🛠️ Tecnologias Utilizadas
-- **Python** 🐍 – linguagem principal do script  
-- **Pandas** 📊 – manipulação e análise de dados  
-- **OpenPyXL** 📁 – leitura e escrita de arquivos Excel  
-- **Emojis e símbolos** ✨ – visualização intuitiva de status  
+Criação de Calendário: Gera calendário completo baseado nas datas dos chamados
 
----
+📈 Métricas de SLA (Equivalentes DAX)
+SLA Início/Término: Calcula percentuais de chamados dentro do prazo
 
-## ⚙️ Como usar
-1. 💻 Instale as dependências:
-```bash
-pip install pandas openpyxl
+Comparações com Meta: Diferença em pontos percentuais vs metas (96% e 98%)
 
-2. ▶️ Execute o script:
+Prazo Ajustado: Conversão inteligente de "NA" para "NP" nos prazos
 
-python TRATAR_ANALISES_UNIFICADO.py
+⚡ Indicadores de Performance
+Tempos de Atendimento: Dias entre criação, conclusão e fechamento
+
+Dias de Atraso: Calcula precisamente dias em atraso
+
+Duração do Chamado: Tempo total desde criação até momento atual
+
+Faixas de Tempo: Classificação em "+90 dias", "+60 dias", "+30 dias"
+
+🔍 Análises de Status
+Status Completo: Chamado, Fechamento e Financeiro
+
+Estoque Atual: Identifica chamados pendentes
+
+Fechamento Pendente: Alertas para concluídos há +30 dias sem fechamento
+
+À Vencer WTM: Alertas para chamados entre 20-29 dias
+
+💰 Indicadores Financeiros
+Valor Total de OS: Soma do valor das ordens de serviço
+
+Média Valor OS: Valor médio das OS
+
+Quantidade de Agências: Contagem de Uniorgs Comerciais
+
+👥 Análises Dimensionais
+Por Divisão, Tipo, Prioridade: Métricas segmentadas
+
+Top Responsáveis: Ranking dos responsáveis
+
+Evolução Mensal: Performance temporal
+
+Métricas Acumuladas: Visão histórica completa
+
+📤 Exportação Avançada
+Base Tratada Completa: Todos dados processados
+
+Planilha Analítica Multi-aba: Análises organizadas
+
+Formatação Condicional: Destaques visuais automáticos
+
+Medidas DAX Equivalentes: Tabela comparativa completa
+
+🛠 Tecnologias Utilizadas
+Python 🐍 – linguagem principal
+
+Pandas 📊 – manipulação e análise de dados
+
+OpenPyXL 📁 – integração com Excel
