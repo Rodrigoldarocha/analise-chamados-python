@@ -26,6 +26,6 @@
 ```bash
 pip install pandas openpyxl
 
-▶️ Execute o script:
+2. ▶️ Execute o script:
 ```bash
 python TRATAR_ANALISES_UNIFICADO.py
