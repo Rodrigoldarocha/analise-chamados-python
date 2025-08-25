@@ -27,5 +27,5 @@
 pip install pandas openpyxl
 
 2. ▶️ Execute o script:
-```bash
+
 python TRATAR_ANALISES_UNIFICADO.py
