@@ -6,6 +6,7 @@ Versão Completa com todas as medidas DAX implementadas
 
 import logging
 import warnings
+import os
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional, Any
 from datetime import datetime, timedelta
@@ -76,10 +77,11 @@ class Config:
     YELLOW_FILL = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     ORANGE_FILL = PatternFill(start_color="FFD966", end_color="FFD966", fill_type="solid")
 
-    # Caminhos
-    FILE_PATH = r"c:\Users\rodrigo.rocha\Downloads\STD - Avanço\Base Geral STD.xlsx"
-    OUTPUT_BASE_TRATADA = r"c:\Users\rodrigo.rocha\Downloads\STD - Avanço\Base_Tratada.xlsx"
-    OUTPUT_ANALISE_COMPLETA = "Analise_Chamados_Completa.xlsx"
+    # Caminhos (agora relativos ao diretório do script)
+    SCRIPT_DIR = Path(__file__).parent
+    FILE_PATH = SCRIPT_DIR / "Base Geral STD.xlsx"
+    OUTPUT_BASE_TRATADA = SCRIPT_DIR / "Base_Tratada.xlsx"
+    OUTPUT_ANALISE_COMPLETA = SCRIPT_DIR / "Analise_Chamados_Completa.xlsx"
 
     # Configurações de análise
     TOP_RESPONSABLES = 15
@@ -1093,17 +1095,17 @@ def main():
         logger.info("Iniciando processamento STD...")
         
         # Processamento
-        processor = STDDataProcessor(Config.FILE_PATH)
+        processor = STDDataProcessor(str(Config.FILE_PATH))
         processor.load_data()
         processor.prepare_data()
-        processor.save_processed_data(Config.OUTPUT_BASE_TRATADA)
+        processor.save_processed_data(str(Config.OUTPUT_BASE_TRATADA))
         
         # Análise
         analyzer = STDAnalyzer(processor.df_processed)
         stats = analyzer.calculate_general_stats()
         
         # Exportação
-        exporter = ExcelExporter(Config.OUTPUT_ANALISE_COMPLETA)
+        exporter = ExcelExporter(str(Config.OUTPUT_ANALISE_COMPLETA))
         exporter.export_analysis(processor, analyzer)
         
         # Resultados
